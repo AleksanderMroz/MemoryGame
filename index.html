@@ -1,0 +1,48 @@
+
+<!DOCTYPE HTML>
+<html>
+<body onload="controller.startGame()">
+  <header>
+    <title>Memory Game_ALEKSANDER MROZ</title>
+    <link href="custom.css" rel="stylesheet" type="text/css">
+  </header>
+  <h1>MEMORY GAME</h1>
+  Highlight time: <input id="new-highlightTime" type="number" value="1" min="1">
+  Set number of Lifes: <input id="new-Missed" type="number" value="0" min="0">
+  <p>Number of pieces to guess: <b id="howMuch">0</b></p>
+  <p>KD%: <b id="KD">0</b></p>
+
+  <p>Chances: <b id="Lifes">2</b></p>
+
+
+<div id="newLifesPanel"
+   style="text-align: left; width: 30%; background-color: beige;">
+   <button type="submit"
+           class='input_submit'
+           style="margin-left: 15px;"
+           onClick="controller.submitChangeLifeAmmout()">Submit
+   </button>
+</div>
+
+
+<button onclick="controller.generateElement()">SkipLevel</button>
+<button onclick="controller.startGame()">Highlight</button>
+
+
+
+  <div id="generated-elements" class="generated">
+    <div  id="0" class="generated-item" onclick="controller.hit(event)"></div>
+    <div  id ="1" class="generated-item" onclick="controller.hit(event)"></div>
+    <div id = "2" class="generated-item" onclick="controller.hit(event)"></div>
+    <div  id="3" class="generated-item" onclick="controller.hit(event)"></div>
+  </div>
+
+
+  <div class="time"> </div>
+
+  <script src="js/controller.js"></script>
+  <script src="js/model.js"></script>
+  <script src="js/view.js"></script>
+</body>
+
+</html>
